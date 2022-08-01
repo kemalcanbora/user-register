@@ -1,0 +1,20 @@
+[
+  {
+    "_id": {"$oid": "62c576ea438084dd21bd0e31"},
+    "createdtime": 1657899604,
+    "email": "hakan@gmail.com",
+    "firstname": "hakan",
+    "lastname": "taşıyan",
+    "password": "$2a$14$ef6xIzQ/XwX/oCl0b7iyautUOFWw3Vzmfx7S7vYQRMHH5bBMR5Xqq",
+    "updatedtime": 0
+  },
+    {
+      "_id": {"$oid": "62c576ea438084dd21bd0e32"},
+      "createdtime": 1657899604,
+      "email": "necati@gmail.com",
+      "firstname": "necati",
+      "lastname": "ateş",
+      "password": "$2a$14$ef6xIzQ/XwX/oCl0b7iyautUOFWw3Vzmfx7S7vYQRMHH5bBMR5Xqq",
+      "updatedtime": 0
+    }
+]

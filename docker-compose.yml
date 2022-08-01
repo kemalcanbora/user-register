@@ -1,0 +1,43 @@
+version: '3'
+services:
+  app:
+    container_name: rollic-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    restart: on-failure
+    networks:
+      - rollic_network
+  mongodb:
+    image: mongo:latest
+    hostname: mongodb
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo_data_volume:/bitnami/mongodb
+    networks:
+      - rollic_network
+  mongodb-dump-generator:
+    image: mongo:latest
+    container_name: 'mongodb-dump-generator'
+    networks:
+      - rollic_network
+    links:
+      - mongodb
+    volumes:
+      - ./build/dumps:/build/dumps
+    depends_on:
+      - mongodb
+    command:
+      - /bin/sh
+      - -c
+      - |
+        mongoimport --host mongodb --port 27017 --db rosemaryDB --mode upsert --type json --file /build/dumps/user.json --jsonArray
+volumes:
+  mongo_data_volume:
+networks:
+  rollic_network:
+    driver: bridge
