@@ -1,14 +1,3 @@
-<style>
-.center {
-  margin-top: 30px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-</style>
-
-<img src="https://www.chartboost.com/wp-content/uploads/2020/04/Rollic.png" height="150" width="300" class="center">
 
 ## Quickstart
  - First of all, please be sure Docker is installed and running.
